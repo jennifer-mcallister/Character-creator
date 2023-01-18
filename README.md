@@ -3,11 +3,13 @@
 
 
 
+
 **Challenge**
 
 Create an app in 2 days based on 
 an GraphlQL API with querys and mutations 
 and demonstrate it with frontend.
+
 
 
 
