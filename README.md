@@ -16,7 +16,7 @@ and demonstrate it with frontend.
 **App**
 
 Based on character creating in videogames. 
-In the app user should be able to create a 
+User should be able to create a 
 new character with a unique name, pick a class 
 and customize apperence. The user should also be 
 able to see all created characters, update apperence 
