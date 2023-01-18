@@ -1,6 +1,6 @@
 ﻿# Character-creator
-Challenge - create an app in 2 days
-########################################
+# Challenge - create an app in 2 days
+
 
 # Challenge
 Create an app in 2 days based on an GraphlQL API with querys and mutations and demonstrate it with frontend.
