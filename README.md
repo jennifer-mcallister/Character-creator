@@ -2,12 +2,17 @@
 Challenge - create an app in 2 days
 
 
+
 **Challenge**
+
 Create an app in 2 days based on 
 an GraphlQL API with querys and mutations 
 and demonstrate it with frontend.
 
+
+
 **App**
+
 Based on character creating in videogames. 
 In the app user should be able to create a 
 new character with a unique name, pick a class 
