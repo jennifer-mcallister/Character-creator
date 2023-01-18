@@ -1,5 +1,5 @@
 ﻿# Character-creator
-*Challenge - create an app in 2 days
+*Challenge - create an app in 2 days*
 
 
 
