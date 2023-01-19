@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="../ts/charcterCreater.ts" type="module"></script>
+    <title>Doomsday</title>
+</head>
+<body>
+    <div class="content-container">
+        <div class="content-container__title">
+            <button type="button">Back</button>
+            <h1>Create character</h1>
+        </div>
+        <form class="select-trates-container">
+            <div class="select-trates-container__trate">
+                <label for="charactername">Name:</label>
+                <input type="text" id="charactername" class="select-trates-container__trate--input">
+            </div>
+            <div class="select-trates-container__trate">
+                <label for="haircolour">Haircolour:</label>
+                <select id="haircolour" class="select-trates-container__trate--input">
+                    <option value="BLUE">Blue</option>
+                    <option value="PINK">Blue</option>
+                    <option value="GREEN">Blue</option>
+                </select>
+            </div>
+            <div class="select-trates-container__trate">
+                <label for="eyecolour">Eyecolour:</label>
+                <select id="eyecolour" class="select-trates-container__trate--input">
+                    <option value="BLUE">Blue</option>
+                    <option value="PINK">Blue</option>
+                    <option value="GREEN">Blue</option>
+                </select>
+            </div>
+            <div class="select-trates-container__trate">
+                <label for="character-class">Class:</label>
+                <select id="character-class" class="select-trates-container__trate--input">
+                    <option value="NECROMANCER">Necromancer</option>
+                    <option value="SORCERESS">Sorceress</option>
+                    <option value="ASSASSIN">Assasin</option>
+                    <option value="BERSERKER">Berserker</option>
+                </select>
+            </div>
+        </form>
+        <div class="create-character-container">
+            <div class="character-container">
+                <div class="character-container__image">
+                    <img src="./assets/sorcererExempel.png" alt="exempel character">
+                </div>
+                <button class="character-container__save-btn" type="button">
+                    <span>Save</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

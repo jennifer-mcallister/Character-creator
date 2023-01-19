@@ -4,10 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./ts/main.ts" type="module"></script>
     <title>DoomsDay</title>
 </head>
 <body>
-    <span>Hello world !</span>
-    
+    <div class="content-container">
+        <div class="content-container__title">
+            <h1>My Characters</h1>
+        </div>
+        <div class="characters-container">
+            <div class="character-container">
+                <div class="character-container__image">
+                    <img src="./assets/sorcererExempel.png" alt="exempel character">
+                </div>
+                <div class="character-container__name">
+                    <span>Bobby</span>
+                </div>
+            </div>
+            <button class="new-characters-container" id="new-character">
+                <span>+</span>
+            </button>
+        </div>
+    </div>   
 </body>
 </html>
