@@ -12,7 +12,7 @@ exports.resolvers = {
             const characterName = args.name
             const filePath = path.join(charactersDirectory, `${characterName}.json`)
             const characterExists = await fileExists(filePath)
-            if (!characterExists) return new GraphQLError('Character  ')
+            if (!characterExists) return new GraphQLError('Character has not been created')
             const character = JSON.parse(await readFile(filePath))
 
             return character
