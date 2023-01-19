@@ -1,24 +1,24 @@
 type Character {
     id: id
     name: String
-    haircolour: String
-    eyecolour: String
-    class: String
+    haircolour: Haircolour
+    eyecolour: Eyecolour
+    class: Class
 }
 
-enum haircolour {
+enum Haircolour {
     BLUE
     PINK
     GREEN
 }
 
-enum eyecolour {
+enum Eyecolour {
     BLUE
     PINK
     GREEN
 }
 
-enum class {
+enum Class {
     NECROMANCER
     SORCERESS
     ASSASSIN
@@ -36,7 +36,7 @@ type Query {
 }
 
 type Mutation {
-    createCharacter(name: String!,haircolour: String, eyecolour: String, class: String!): Character
-    updateCharacter(name: String!,haircolour: String!, eyecolour: String!, class: String!): Character
+    createCharacter(name: String!,haircolour: Haircolour, eyecolour: Eyecolour, class: Class): Character
+    updateCharacter(name: String!,haircolour: Haircolour!, eyecolour: Eyecolour!, class: Class!): Character
     delteCharacter(name: String!): DeletedResourceResponse
 }
