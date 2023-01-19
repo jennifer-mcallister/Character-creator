@@ -65,8 +65,22 @@ exports.resolvers = {
             return updatedCharacter
         },
         delteCharacter: async (_, args, context) => {
-
-            return null
+            const characterName = args.characterName
+            const filePath = path.join(charactersDirectory, `${characterName}.json`)
+            const Exists = await fileExists(filePath)
+            if(!Exists) return new GraphQLError('Character has not been created')
+            try {
+                await deleteFile(filePath)
+            } catch (error) {
+                return {
+                    deletedCharacter: characterName,
+                    success: false
+                }
+            }
+            return {
+                deletedCharacter: characterName,
+                success: true
+            }
         },
     }
 }
