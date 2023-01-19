@@ -5,3 +5,19 @@ type Character {
     eyecolour: String
     class: String
 }
+
+type DeletedResourceResponse {
+	deletedCharacter: name
+	success: Boolean
+}
+
+type Query {
+    getCharacterByName(name: String!): Character
+    getAllCharacters: [Character]
+}
+
+type Mutation {
+    createCharacter(name: String!,haircolour: String, eyecolour: String, class: String!): Character
+    updateCharacter(name: String!,haircolour: String!, eyecolour: String!, class: String!): Character
+    delteCharacter(name: String!): DeletedResourceResponse
+}
