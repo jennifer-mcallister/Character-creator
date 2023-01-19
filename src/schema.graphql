@@ -1,5 +1,5 @@
 type Character {
-    name: String
+    characterName: String
     haircolour: CharacterHaircolour
     eyecolour: CharacterEyecolour
     class: CharacterClass
@@ -30,12 +30,12 @@ type DeletedResourceResponse {
 }
 
 type Query {
-    getCharacterByName(name: String!): Character
+    getCharacterByName(characterName: String!): Character
     getAllCharacters: [Character]
 }
 
 type Mutation {
-    createCharacter(name: String!,haircolour: CharacterHaircolour, eyecolour: CharacterEyecolour, class: CharacterClass): Character
-    updateCharacter(name: String!,haircolour: CharacterHaircolour!, eyecolour: CharacterEyecolour!, class: CharacterClass!): Character
-    delteCharacter(name: String!): DeletedResourceResponse
+    createCharacter(characterName: String!,haircolour: CharacterHaircolour, eyecolour: CharacterEyecolour, class: CharacterClass): Character
+    updateCharacter(characterName: String!,haircolour: CharacterHaircolour!, eyecolour: CharacterEyecolour!, class: CharacterClass!): Character
+    delteCharacter(characterName: String!): DeletedResourceResponse
 }

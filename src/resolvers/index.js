@@ -9,7 +9,7 @@ const charactersDirectory = path.join(__dirname, '..', 'data', 'characters')
 exports.resolvers = {
     Query: {
         getCharacterByName: async (_, args, context) => {
-            const characterName = args.name
+            const characterName = args.characterName
             const filePath = path.join(charactersDirectory, `${characterName}.json`)
             const characterExists = await fileExists(filePath)
             if (!characterExists) return new GraphQLError('Character has not been created')
@@ -32,8 +32,21 @@ exports.resolvers = {
     },
     Mutation: {
         createCharacter: async (_, args, context) => {
+            if (args.characterName.length <= 2) return new GraphQLError('Name must be at least three character long')
 
-            return null
+            const newCharacter = { 
+                characterName: args.characterName, 
+                haircolour: args.characterHaircolour || "BLUE", 
+                eyecolour: args.characterEyecolour ||"BLUE", 
+                class: args.characterClass || "BERSERKER"
+            } 
+
+            const filePath = path.join(charactersDirectory, `${newCharacter.characterName}.json`)
+            const characterExists = await fileExists(filePath)
+            if (characterExists) return new GraphQLError('Name is not available')
+            await fsPromises.writeFile(filePath, JSON.stringify(newCharacter))
+
+            return newCharacter
         },
         updateCharacter: async (_, args, context) => {
 
