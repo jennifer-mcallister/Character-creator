@@ -38,7 +38,7 @@ exports.resolvers = {
                 characterName: args.characterName, 
                 haircolour: args.characterHaircolour || "BLUE", 
                 eyecolour: args.characterEyecolour ||"BLUE", 
-                class: args.characterClass || "BERSERKER"
+                characterClass: args.characterClass || "BERSERKER"
             } 
 
             const filePath = path.join(charactersDirectory, `${newCharacter.characterName}.json`)
@@ -51,15 +51,15 @@ exports.resolvers = {
         updateCharacter: async (_, args, context) => {
             const { 
                 characterName: characterName, 
-                haircolour: characterHaircolour, 
-                eyecolour: characterEyecolour, 
-                class: characterClass 
+                haircolour: haircolour, 
+                eyecolour: eyecolour, 
+                characterClass: characterClass
             } = args
 
             const filePath = path.join(charactersDirectory, `${characterName}.json`)
             const exists = await fileExists(filePath)
             if (!exists) return new GraphQLError('Character has not been created')
-            const updatedCharacter = {characterName, characterHaircolour, characterEyecolour, characterClass }
+            const updatedCharacter = {characterName, haircolour, eyecolour, characterClass }
             await fsPromises.writeFile(filePath, JSON.stringify(updatedCharacter))
 
             return updatedCharacter

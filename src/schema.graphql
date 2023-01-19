@@ -2,7 +2,7 @@ type Character {
     characterName: String
     haircolour: CharacterHaircolour
     eyecolour: CharacterEyecolour
-    class: CharacterClass
+    characterClass: CharacterClass
 }
 
 enum CharacterHaircolour {
@@ -35,7 +35,7 @@ type Query {
 }
 
 type Mutation {
-    createCharacter(characterName: String!,haircolour: CharacterHaircolour, eyecolour: CharacterEyecolour, class: CharacterClass): Character
-    updateCharacter(characterName: String!,haircolour: CharacterHaircolour!, eyecolour: CharacterEyecolour!, class: CharacterClass!): Character
+    createCharacter(characterName: String!,haircolour: CharacterHaircolour, eyecolour: CharacterEyecolour, characterClass: CharacterClass): Character
+    updateCharacter(characterName: String!,haircolour: CharacterHaircolour!, eyecolour: CharacterEyecolour!, characterClass: CharacterClass!): Character
     delteCharacter(characterName: String!): DeletedResourceResponse
 }

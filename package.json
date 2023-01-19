@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./src/server.js"
+    "dev": "nodemon ./src/server.js",
+    "start": "npx parcel src/index.html"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,11 @@
     "@graphql-tools/load-files": "^6.6.1",
     "@graphql-tools/schema": "^9.0.13",
     "dotenv": "^16.0.3",
-    "graphql": "^16.6.0"
+    "graphql": "^16.6.0",
+    "@parcel/transformer-sass": "^2.8.2",
+    "parcel": "^2.8.2",
+    "@parcel/validator-typescript": "^2.8.0",
+    "@parcel/transformer-typescript-tsc": "^2.8.0",
+    "tsc": "^2.0.4"
   }
 }
