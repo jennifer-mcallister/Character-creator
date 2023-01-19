@@ -1,0 +1,7 @@
+type Character {
+    id: id
+    name: String
+    haircolour: String
+    eyecolour: String
+    class: String
+}
