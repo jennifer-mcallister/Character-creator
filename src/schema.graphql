@@ -6,6 +6,25 @@ type Character {
     class: String
 }
 
+enum haircolour {
+    BLUE
+    PINK
+    GREEN
+}
+
+enum eyecolour {
+    BLUE
+    PINK
+    GREEN
+}
+
+enum class {
+    NECROMANCER
+    SORCERESS
+    ASSASSIN
+    BERSERKER
+}
+
 type DeletedResourceResponse {
 	deletedCharacter: name
 	success: Boolean
