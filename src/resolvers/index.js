@@ -9,8 +9,14 @@ const charactersDirectory = path.join(__dirname, '..', 'data', 'characters')
 exports.resolvers = {
     Query: {
         getCharacterByName: async (_, args, context) => {
+            const characterName = args.name
+            const filePath = path.join(charactersDirectory, `${characterName}.json`)
+            const characterExists = await fileExists(filePath)
+            if (!characterExists) return new GraphQLError('Character  ')
+            const character = JSON.parse(await readFile(filePath))
 
-            return null
+            return character
+            
         },
         getAllCharacters: async (_, args, context) => {
 
