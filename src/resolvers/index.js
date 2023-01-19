@@ -19,8 +19,15 @@ exports.resolvers = {
             
         },
         getAllCharacters: async (_, args, context) => {
-
-            return null
+            const files = await getDirectoryFileNames(charactersDirectory)
+            const characters = []
+            for(const file of files) {
+                const filePath = path.join(charactersDirectory, `${file}`)
+                const character = JSON.parse(await readFile(filePath))
+                characters.push(character)
+            }
+            if (characters.length === 0) return new GraphQLError('No characters created')
+            return characters
         }
     },
     Mutation: {
