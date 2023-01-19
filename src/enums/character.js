@@ -1,16 +1,16 @@
-exports.haircolour = {
+exports.CharacterHaircolour = {
     BLUE: 'BLUE',
     PINK: 'PINK',
     GREEN: 'GREEN',
 }
 
-exports.eyecolour = {
+exports.CharacterEyecolour = {
     BLUE: 'BLUE',
     PINK: 'PINK',
     GREEN: 'GREEN',
 }
 
-exports.class = {
+exports.CharacterClass = {
     NECROMANCER: 'NECROMANCER',
     SORCERESS: 'SSORCERESS',
     ASSASSIN: 'ASSASSIN',

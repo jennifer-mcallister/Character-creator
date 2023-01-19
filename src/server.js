@@ -17,10 +17,10 @@ async function run() {
         })
         const server = new ApolloServer({ schema: schema})
         const res = await startStandaloneServer(server)
-        console.log(`Server is up and going at ${res.url}`)
+        console.log(`Server is up and going ${res.url}`)
     } catch (error) {
         console.error(error)   
     }
 }
 
-run ()
+run () 
