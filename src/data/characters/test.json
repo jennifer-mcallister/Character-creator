@@ -1,6 +1,1 @@
-{
-    "name": "test",
-    "haircolour": "BLUE",
-    "eyecolour": "BLUE",
-    "class": "BERSERKER"
-}
+{"characterName":"test","characterHaircolour":"PINK","characterEyecolour":"PINK","characterClass":"BERSERKER"}

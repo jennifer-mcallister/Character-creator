@@ -49,8 +49,20 @@ exports.resolvers = {
             return newCharacter
         },
         updateCharacter: async (_, args, context) => {
+            const { 
+                characterName: characterName, 
+                haircolour: characterHaircolour, 
+                eyecolour: characterEyecolour, 
+                class: characterClass 
+            } = args
 
-            return null
+            const filePath = path.join(charactersDirectory, `${characterName}.json`)
+            const exists = await fileExists(filePath)
+            if (!exists) return new GraphQLError('Character has not been created')
+            const updatedCharacter = {characterName, characterHaircolour, characterEyecolour, characterClass }
+            await fsPromises.writeFile(filePath, JSON.stringify(updatedCharacter))
+
+            return updatedCharacter
         },
         delteCharacter: async (_, args, context) => {
 
