@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="./ts/main.ts" type="module"></script>
+    <base href="/">
+    <script defer src="/js/main.js"  type="text/javascript"></script>
     <title>DoomsDay</title>
+    
 </head>
 <body>
     <div class="content-container">
@@ -15,15 +17,17 @@
         <div class="characters-container">
             <div class="character-container">
                 <div class="character-container__image">
-                    <img src="./assets/sorcererExempel.png" alt="exempel character">
+                    <img src="/assets/sorcererExempel.png" alt="exempel character">
                 </div>
                 <div class="character-container__name">
                     <span>Bobby</span>
                 </div>
             </div>
-            <button class="new-characters-container" id="new-character">
-                <span>+</span>
-            </button>
+            <a href="./html/characterCreater.html">
+                <div class="new-characters-container" id="new-character">
+                    <span>+</span>
+                </div>
+            </a>
         </div>
     </div>   
 </body>
