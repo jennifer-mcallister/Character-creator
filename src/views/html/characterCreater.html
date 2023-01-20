@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="/">
-    <script defer src="ts/charcterCreater.js" type="text/javascript"></script>
+    <script defer src="js/charcterCreater.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/characterCreater.css">
     
     <title>Doomsday</title>
 </head>
@@ -28,16 +29,16 @@
                 <label for="haircolour">Haircolour:</label>
                 <select id="haircolour" class="select-trates-container__trate--input">
                     <option value="BLUE">Blue</option>
-                    <option value="PINK">Blue</option>
-                    <option value="GREEN">Blue</option>
+                    <option value="PINK">Pink</option>
+                    <option value="GREEN">Green</option>
                 </select>
             </div>
             <div class="select-trates-container__trate">
                 <label for="eyecolour">Eyecolour:</label>
                 <select id="eyecolour" class="select-trates-container__trate--input">
                     <option value="BLUE">Blue</option>
-                    <option value="PINK">Blue</option>
-                    <option value="GREEN">Blue</option>
+                    <option value="PINK">Pink</option>
+                    <option value="GREEN">Green</option>
                 </select>
             </div>
             <div class="select-trates-container__trate">
@@ -45,7 +46,7 @@
                 <select id="character-class" class="select-trates-container__trate--input">
                     <option value="NECROMANCER">Necromancer</option>
                     <option value="SORCERESS">Sorceress</option>
-                    <option value="ASSASSIN">Assasin</option>
+                    <option value="ASSASSIN">Assassin</option>
                     <option value="BERSERKER">Berserker</option>
                 </select>
             </div>
@@ -55,7 +56,7 @@
                 <div class="character-container__image">
                     <img src="./assets/sorcererExempel.png" alt="exempel character">
                 </div>
-                <button class="character-container__save-btn" type="button">
+                <button class="character-container__save-btn" type="button" id="save-btn">
                     <span>Save</span>
                 </button>
             </div>
