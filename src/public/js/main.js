@@ -1,82 +1,77 @@
-document.getElementById("save-btn")?.addEventListener("click", async ()=> {
-    createNewCharacter ();
-    console.log("hello")
-})
 
 
-async function createNewCharacter () {
 
-    const createCharacterQuery = `mutation createCharacterProject(characterName: String!) {
-        createProject(name: $name, description: $description) {
-            id
-            name
-            description
-        }
-    }`
+async function getAllCharacters () {
 
-    const createProjectQueryVars = {
-        name: 'Testus',
-        description: 'Testus project description',
-    }
-        const response = await fetch('/graphql', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                query: `mutation createCharacter(characterName: String!) {
-                    createCharacter(characterName: $characterName) {
+    const response = await fetch('/graphql', {
+        method: 'POST',
+        headers: {
+            Accept: "application/json",
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            query: `
+                query getAllCharacters {
+                    getAllCharacters {
                         characterName
                         haircolour
+                        eyecolour
                         characterClass
                     }
-                }`,
-                variables: {
-                    name: '',
-                },
-            }),
+                } `
         })
+    })
+    const data = await response.json()
 
-        const data = await response.json()
+    const characters = data.data.getAllCharacters
 
-        console.log(data)
+
+    return characters
+
 
 }
 
-// function renderCharacters () {
-//     const container = document.getElementById("characters-container")
+async function renderCharacters () {
+    let list = await getAllCharacters();
+    let container = document.getElementById("characters-container")
 
+    for (let i = 0; i < list.length; i++) {
+        console.log(list[i])
+        let characterContainer = document.createElement("div")
+        characterContainer.classList.add("character-container")
+        container.appendChild(characterContainer)
 
-//     for (let i = 0; i < characters.length; i++) {
+        let imageContainer = document.createElement("div")
+        imageContainer.classList.add("character-container__image")
+        characterContainer.appendChild(imageContainer)
 
-//     }
-// }
-
-// renderCharacters ();
-
-// async function getAllCharacters () {
-//     const graphQlQuery = async (url, query, variables = {}) => {
-//         const response = await fetch(url, {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//             body: JSON.stringify({
-//                 query,
-//                 variables,
-//             }),
-//         })
-
-//         const res = await response.json()
-//         return res.data
+        let text = document.createElement("p")
+        text.innerText = list[i].characterName
+        imageContainer.appendChild(text)
         
-//     }
+        let haircolour = document.createElement("p")
+        haircolour.innerText = "Haircolour: " + list[i].haircolour
+        imageContainer.appendChild(haircolour)
+
+        let eyecolour = document.createElement("p")
+        eyecolour.innerText = "Eyecolour: " + list[i].eyecolour
+        imageContainer.appendChild(eyecolour)
+
+        let characterClass = document.createElement("p")
+        characterClass.innerText = "Class: " + list[i].characterClass
+        imageContainer.appendChild(characterClass)
+
+
+
+        let containerName = document.createElement("div")
+        containerName.classList.add("character-container__name")
+        characterContainer.appendChild(containerName)
+    }
 
     
-    
-// }
+}   
 
-// getAllCharacters();
 
+renderCharacters ()
 
 

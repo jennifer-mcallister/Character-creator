@@ -4,13 +4,24 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-color: rgb(25, 13, 39);
+    margin: 0;
+    font-size: 20px;
 }
-
-.characters-container {
+body {
+    margin: 0;
+    color: white;
+}
+#characters-container {
     display: flex;
     flex-wrap: wrap;
+    gap: 30px;
+    font-size: 16px;
 }
 
+p {
+    font-size: 20px;
+}
 .character-container {
     width: 200px;
     height: 200px;
@@ -24,7 +35,7 @@
 .character-container__image {
     width: 200px; 
     height: 200px;
-    background-color: rgb(78, 78, 78);
+    background-color: rgb(47, 5, 82);
 
     
 }
